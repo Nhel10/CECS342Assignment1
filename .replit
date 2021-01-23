@@ -1,2 +1,2 @@
 language = "c"
-run = "mergeSort.c"
+run = "gcc mergeSort.c -o mergeSort; ./mergeSort"
