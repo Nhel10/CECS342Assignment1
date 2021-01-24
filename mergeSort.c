@@ -12,6 +12,7 @@ void print(int *a); //to display our array
 int main() 
 {
  
+  printf("Hey you, thats right !\n");
   int  a[N] = {4,65,2,-31,0,99,2,83, 287,1};  // given array
 
   print(a);
