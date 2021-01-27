@@ -9,6 +9,8 @@ int pivot(int*a, int, int, int); //find value to split the array
 
 void print(int*a); //to print our arrray
 
+void swapf(int * a, int * b);// swap values
+
 int main(void) 
 {
   int a[N] = {4,65,2,-31,0,99,2,83,287,1};
@@ -32,9 +34,36 @@ void print(int *a)
     printf(" %d",a[i]);
 }
 
-void qsort( int *a, int n) //quick sort array a with n elements
+int partition( int * a, int left, int right, int pivot_index )
 {
+  int pivot_value = a[pivot_index];
+  swapf(&a[pivot_index],&a[right]);
 
+  int store = left;
+
+  for(int i = left; i < right; ++i)
+  {
+    if(a[i] <= pivot_value)
+    {
+      swapf(&a[store],&a[i]);
+      ++store;
+    }
+  }
+
+  swapf(&a[right], &a[store]);
+  return store;
 }
 
+void qsort( int *a, int n) //quick sort array a with n elements
+{
+  quick_sort(a, 0, n);
+}
+
+void swatf(int * a, int *b)//swap value function 
+{
+  int temp = *a;
+  *a = *b;
+  *b = temp;
+
+}
 
