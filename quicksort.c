@@ -14,8 +14,8 @@ void swapf(int * a, int * b);// swap values
 int main(void) 
 {
   int a[N] = {4,65,2,-31,0,99,2,83,287,1};
-   printf("Hello World!");
-   qsort2(a, N);
+   printf("Hello World!\n");
+   qsort2(a, N-1);
    print(a);
    return 0;
 }
@@ -23,13 +23,10 @@ int main(void)
 void quick_sort( int * a, int left, int right) // left side of subarray right side of subarray 
 {
   
-  int c = 3;
-  if ( (right|| left) <= c)
-    printf("\nHello darkenss my old friend\n");
-  else
+ if (left < right)
   {
     int pivot_index = pivot(a, left, right, right/2);
-
+    pivot_index = partition(a,left,right, pivot_index);
     quick_sort(a, left, pivot_index -1 ); // break array to first element up to pivot index
     quick_sort(a,pivot_index + 1, right); // second part of subarray starting from ppivot to last index
   }
